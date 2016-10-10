@@ -6,6 +6,7 @@ var port=config.port;
 var exp=require("express");
 var app=exp(); 
 var modelo=require('./servidor/modelo.js');
+
 var juego= new modelo.Juego();
 
 //app.use(app.router);
@@ -20,8 +21,11 @@ app.get("/",function(request,response){
 app.get('/crearUsuario/:nombre',function(request,response){
 	//crear el usuario con el nombre
 	var usuario= new modelo.Usuario(request.params.nombre);
+	juego.agregarUsuario(usuario);
+	var id=usuario.id;
+	usuario=juego.obtenerUsuario(id);
 	console.log(usuario);
-	response.send({'nombre':usuario.nombre,'nivel':usuario.nivel});
+	response.send({'nombre':usuario.nombre,'nivel':usuario.nivel,'id':usuario.id});
 })
 
 console.log("Servidor escuchando en el puerto "+port);
