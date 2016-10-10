@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/phaser.min.js"></script>
+	<script type="text/javascript" src="lib/phaser.min.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -22,8 +22,8 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-3">
-      <h2>Conquista Niveles</h2>
-      <p>Jugador</p>
+      <div id="control">
+      </div>
     </div>
     <div class="col-sm-9">
       <div id="juegoId"></div>
@@ -31,5 +31,9 @@
   </div>
 </div>
 <script src="js/juego-clase.js"></script>
+<script src="js/control-juego.js"></script>
+<script>
+    inicio();
+</script>
 </body>
 </html>

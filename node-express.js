@@ -21,6 +21,7 @@ app.get('/crearUsuario/:nombre',function(request,response){
 	//crear el usuario con el nombre
 	var usuario= new modelo.Usuario(request.params.nombre);
 	console.log(usuario);
+	response.send({'nombre':usuario.nombre,'nivel':usuario.nivel});
 })
 
 console.log("Servidor escuchando en el puerto "+port);

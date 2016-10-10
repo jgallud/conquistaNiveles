@@ -18,13 +18,20 @@ function mostrarCabecera(){
 }
 
 function botonNombre(){
-	$('#cabecera').append('<button type="button" id="nombreBtn" class="btn btn-primary btn-md">Medium</button>');
+	var nombre="";
+	$('#cabecera').append('<button type="button" id="nombreBtn" class="btn btn-primary btn-md">Enviar</button>');
 	$('#nombreBtn').on('click',function(){
-		$('nombreBtn').remove();
-		crearUsuario($('#nombre').val());
+		nombre=$('#nombre').val();
+		$('#nombre').remove();
+		$('#nombreBtn').remove();		
+		crearUsuario(nombre);
 	});
 }
 
+function mostrarInfoJugador(datos){
+	$('#datos').remove();
+	$('#cabecera').append('<div id="datos">Nombre: '+datos.nombre+' Nivel: '+datos.nivel+'</div>');
+}
 
 //Funciones de comunicación con el servidor
 
@@ -33,8 +40,7 @@ function crearUsuario(nombre){
 		nombre="jugador";
 	}
 	$.getJSON(url+'crearUsuario/'+nombre,function(datos){
-		//datos tiene la respuesta del servidor
-		//mostrar los datos del usuario
+		mostrarInfoJugador(datos);
 	});
 	//mostrar datos
 }
