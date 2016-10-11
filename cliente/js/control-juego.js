@@ -13,13 +13,13 @@ function borrarControl(){
 
 function mostrarCabecera(){
 	$('#cabecera').remove();
-	$('#control').append('<div id="cabecera"><h2>Panel de  Control</h2><input type="text" id="nombre" placeholder="introduce tu nombre"></div>');
+	$('#control').append('<p id="cabecera"><h2>Panel de  Control</h2><input type="text" id="nombre" placeholder="introduce tu nombre"></p>');
 	botonNombre();
 }
 
 function botonNombre(){
 	var nombre="";
-	$('#cabecera').append('<button type="button" id="nombreBtn" class="btn btn-primary btn-md">Enviar</button>');
+	$('#control').append('<button type="button" id="nombreBtn" class="btn btn-primary btn-md">Iniciar partida</button>');
 	$('#nombreBtn').on('click',function(){
 		nombre=$('#nombre').val();
 		$('#nombre').remove();
