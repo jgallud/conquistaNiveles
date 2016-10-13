@@ -30,7 +30,7 @@ function botonNombre(){
 
 function mostrarInfoJugador(datos){
 	$('#datos').remove();
-	$('#cabecera').append('<div id="datos">Nombre: '+datos.nombre+' Nivel: '+datos.nivel+' Id:'+datos.id+'</div>');
+	$('#control').append('<div id="datos">Nombre: '+datos.nombre+' Nivel: '+datos.nivel+' Id:'+datos.id+'</div>');
 }
 
 //Funciones de comunicación con el servidor
