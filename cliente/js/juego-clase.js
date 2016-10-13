@@ -1,25 +1,40 @@
 
-function crearNivel(){
-    var game = new Phaser.Game(800, 600, Phaser.AUTO, 'juegoId', { preload: preload, create: create, update: update });
+var player;
+var platforms;
+var cursors;
 
-    function preload() {
+var stars;
+var score = 0;
+var scoreText;
+var game;
 
+function crearNivel(nivel){
+    switch(nivel){
+        case '0': 
+            game = new Phaser.Game(800, 600, Phaser.AUTO, 'juegoId', { preload: preload, create: create0, update: update });
+            break;
+        case '1': 
+            break;
+        case '2': 
+            break;
+        default: noHayNiveles();
+             break;
+    }
+}
+
+
+function preload() {
         game.load.image('sky', 'assets/sky.png');
         game.load.image('ground', 'assets/platform.png');
+        game.load.image('ground2', 'assets/platform2.png');
         game.load.image('star', 'assets/star.png');
         game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
 
-    }
+}
 
-    var player;
-    var platforms;
-    var cursors;
 
-    var stars;
-    var score = 0;
-    var scoreText;
 
-    function create() {
+function create0() {
 
         //  We're going to be using physics, so enable the Arcade Physics system
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -49,6 +64,9 @@ function crearNivel(){
         ledge = platforms.create(-150, 250, 'ground');
         ledge.body.immovable = true;
 
+        ledge =platforms.create(300,150,'ground2');
+        ledge.body.immovable = true;
+        
         // The player and its settings
         player = game.add.sprite(32, game.world.height - 150, 'dude');
 
@@ -91,7 +109,7 @@ function crearNivel(){
         
     }
 
-    function update() {
+function update() {
 
         //  Collide the player and the stars with the platforms
         game.physics.arcade.collide(player, platforms);
@@ -133,7 +151,7 @@ function crearNivel(){
 
     }
 
-    function collectStar (player, star) {
+function collectStar (player, star) {
         
         // Removes the star from the screen
         star.kill();
@@ -142,5 +160,5 @@ function crearNivel(){
         score += 10;
         scoreText.text = 'Score: ' + score;
 
-    }
 }
+
