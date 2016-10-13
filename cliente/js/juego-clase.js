@@ -2,6 +2,7 @@
 var player;
 var platforms;
 var cursors;
+var cielo;
 
 var stars;
 var score = 0;
@@ -29,7 +30,7 @@ function preload() {
         game.load.image('ground2', 'assets/platform2.png');
         game.load.image('star', 'assets/star.png');
         game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
-
+        game.load.image('cielo','assets/heaven.png');
 }
 
 
@@ -44,9 +45,14 @@ function create0() {
 
         //  The platforms group contains the ground and the 2 ledges we can jump on
         platforms = game.add.group();
+        cielo = game.add.group();
 
         //  We will enable physics for any object that is created in this group
         platforms.enableBody = true;
+        cielo.enableBody = true;
+
+        var fin=cielo.create(0,-5,'cielo');
+        fin.scale.setTo(2,1);
 
         // Here we create the ground.
         var ground = platforms.create(0, game.world.height - 64, 'ground');
@@ -64,9 +70,9 @@ function create0() {
         ledge = platforms.create(-150, 250, 'ground');
         ledge.body.immovable = true;
 
-        ledge =platforms.create(300,150,'ground2');
+        ledge =platforms.create(320,100,'ground2');
         ledge.body.immovable = true;
-        
+
         // The player and its settings
         player = game.add.sprite(32, game.world.height - 150, 'dude');
 
@@ -118,6 +124,8 @@ function update() {
         //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
         game.physics.arcade.overlap(player, stars, collectStar, null, this);
 
+        game.physics.arcade.overlap(player, cielo, terminaNivel, null, this);
+
         //  Reset the players velocity (movement)
         player.body.velocity.x = 0;
 
@@ -151,14 +159,17 @@ function update() {
 
     }
 
-function collectStar (player, star) {
-        
+function collectStar (player, star) {       
         // Removes the star from the screen
         star.kill();
 
         //  Add and update the score
         score += 10;
         scoreText.text = 'Score: ' + score;
+}
 
+function terminaNivel(player,final){
+    // llamar a nivelCompletado y pasar tiempo y vidas
+    console.log("Nivel completado");
 }
 
