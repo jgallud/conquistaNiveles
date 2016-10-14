@@ -19,7 +19,7 @@ function borrarControl(){
 
 function mostrarCabecera(){
 	$('#cabecera').remove();
-	$('#control').append('<p id="cabecera"><h2>Panel de  Control</h2><input type="text" id="nombre" placeholder="introduce tu nombre"></p>');
+	$('#control').append('<p id="cabecera"><h2 id="cabeceraP">Panel de  Control</h2><input type="text" id="nombre" placeholder="introduce tu nombre"></p>');
 	botonNombre();
 }
 
@@ -39,6 +39,8 @@ function mostrarInfoJugador(){
 	var id=$.cookie("id");
 	var nivel=$.cookie("nivel");
 	$('#datos').remove();
+	$('#cabeceraP').remove();
+	$('#cabecera').remove();
 	$('#control').append('<p id="cabecera"><h2>Panel</h2></p>')
 	$('#control').append('<div id="datos">Nombre: '+nombre+' Nivel: '+nivel+' Id:'+id+'</div>');
 	siguienteNivel();
@@ -75,7 +77,7 @@ function crearUsuario(nombre){
 
 function comprobarUsuario(){
 	var id=$.cookie("id");
-	//comprobar id
+
 	$.getJSON(url+'comprobarUsuario/'+id,function(datos){
 		if (datos.nivel<0){
 			borrarCookies();

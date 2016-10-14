@@ -31,14 +31,12 @@ app.get('/crearUsuario/:nombre',function(request,response){
 app.get('/comprobarUsuario/:id',function(request,response){
 	var id=request.params.id;
 	var usuario=juego.obtenerUsuario(id);
-	var json;
-	console.log("comprobar usuario: "+usuario);
-	if (usuario==undefined){
-		response.send({'nivel':-1});
+	var json={'nivel':-1};
+	//console.log("comprobar usuario: "+usuario);
+	if (usuario!=undefined){		
+		json={'nivel':usuario.nivel};
 	}
-	else{
-		response.send({'nivel':usuario.nivel});
-	}
+	response.send(json);
 })
 
 console.log("Servidor escuchando en el puerto "+port);
