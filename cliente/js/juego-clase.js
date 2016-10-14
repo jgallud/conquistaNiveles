@@ -51,7 +51,7 @@ function create0() {
         platforms.enableBody = true;
         cielo.enableBody = true;
 
-        var fin=cielo.create(0,-5,'cielo');
+        var fin=cielo.create(0,-15,'cielo');
         fin.scale.setTo(2,1);
 
         // Here we create the ground.
@@ -75,6 +75,7 @@ function create0() {
 
         // The player and its settings
         player = game.add.sprite(32, game.world.height - 150, 'dude');
+        player.vidas=5;
 
         //  We need to enable physics on the player
         game.physics.arcade.enable(player);
@@ -93,7 +94,7 @@ function create0() {
 
         //  We will enable physics for any star that is created in this group
         stars.enableBody = true;
-
+        stars.physicsBodyType = Phaser.Physics.ARCADE;
         //  Here we'll create 12 of them evenly spaced apart
         for (var i = 0; i < 12; i++)
         {
@@ -104,11 +105,12 @@ function create0() {
             star.body.gravity.y = 300;
 
             //  This just gives each star a slightly random bounce value
-            star.body.bounce.y = 0.7 + Math.random() * 0.2;
+            //star.body.bounce.y = 0.7 + Math.random() * 0.2;
+            //star.checkWorldBounds = true;
         }
 
         //  The score
-        scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+        scoreText = game.add.text(16, 22, 'Vidas: 5', { fontSize: '32px', fill: '#000' });
 
         //  Our controls.
         cursors = game.input.keyboard.createCursorKeys();
@@ -119,12 +121,14 @@ function update() {
 
         //  Collide the player and the stars with the platforms
         game.physics.arcade.collide(player, platforms);
-        game.physics.arcade.collide(stars, platforms);
+        //game.physics.arcade.collide(stars, platforms);
 
         //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
         game.physics.arcade.overlap(player, stars, collectStar, null, this);
 
         game.physics.arcade.overlap(player, cielo, terminaNivel, null, this);
+
+        game.physics.arcade.overlap(platforms,stars,muereEstrella,null,this);
 
         //  Reset the players velocity (movement)
         player.body.velocity.x = 0;
@@ -164,12 +168,16 @@ function collectStar (player, star) {
         star.kill();
 
         //  Add and update the score
-        score += 10;
-        scoreText.text = 'Score: ' + score;
+        player.vidas=player.vidas-1;
+        scoreText.text = 'Vidas: ' + player.vidas;
 }
 
 function terminaNivel(player,final){
     // llamar a nivelCompletado y pasar tiempo y vidas
     console.log("Nivel completado");
+    player.kill();
 }
 
+function muereEstrella(platform,star){
+    star.kill();
+}
