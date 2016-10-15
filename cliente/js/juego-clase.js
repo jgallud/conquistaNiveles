@@ -7,19 +7,20 @@ var cielo;
 var stars;
 var score = 0;
 var scoreText;
-var game;
+
+var maxNiveles=3;
+var ni;
+
+inicializarCoordenadas();
 
 function crearNivel(nivel){
-    switch(nivel){
-        case '0': 
-            game = new Phaser.Game(800, 600, Phaser.AUTO, 'juegoId', { preload: preload, create: create0, update: update });
-            break;
-        case '1': 
-            break;
-        case '2': 
-            break;
-        default: noHayNiveles();
-             break;
+    ni=parseInt(nivel);
+    if(ni<maxNiveles)
+    {
+        game = new Phaser.Game(800, 600, Phaser.AUTO, 'juegoId', { preload: preload, create: create, update: update });
+    }
+    else{
+        noHayNiveles();
     }
 }
 
@@ -35,7 +36,7 @@ function preload() {
 
 
 
-function create0() {
+function create() {
 
         //  We're going to be using physics, so enable the Arcade Physics system
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -64,14 +65,21 @@ function create0() {
         ground.body.immovable = true;
 
         //  Now let's create two ledges
-        var ledge = platforms.create(400, 400, 'ground');
-        ledge.body.immovable = true;
+        var ledge;// = platforms.create(400, 400, 'ground');
+        //ledge.body.immovable = true;
 
+        for(var i=0;i<4;i++){
+            ledge = platforms.create(coordenadas[ni][i].x,coordenadas[ni][i].y, 'ground2');
+            ledge.body.immovable = true;            
+        }
+        /*
         ledge = platforms.create(-150, 250, 'ground');
         ledge.body.immovable = true;
 
         ledge =platforms.create(320,100,'ground2');
         ledge.body.immovable = true;
+
+        */
 
         // The player and its settings
         player = game.add.sprite(32, game.world.height - 150, 'dude');
@@ -116,6 +124,7 @@ function create0() {
         cursors = game.input.keyboard.createCursorKeys();
         
     }
+
 
 function update() {
 

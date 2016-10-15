@@ -1,5 +1,6 @@
 
 var url="http://127.0.0.1:1338/";
+var game;
 
 //Funciones que modifican el index
 
@@ -52,6 +53,19 @@ function siguienteNivel(){
 		$('#siguienteBtn').remove();
 		crearNivel($.cookie('nivel'));
 	});
+}
+
+function noHayNiveles(){
+	$('#control').append('<button type="button" id="siguienteBtn" class="btn btn-primary btn-md">Volver a empezar</button>')
+	$('#siguienteBtn').on('click',function(){
+		$('#siguienteBtn').remove();
+		//reset();
+	});
+}
+
+function reset(){
+	borrarCookies();
+	mostrarCabecera();
 }
 
 function borrarCookies(){
