@@ -185,6 +185,7 @@ function terminaNivel(player,final){
     // llamar a nivelCompletado y pasar tiempo y vidas
     console.log("Nivel completado");
     player.kill();
+    nivelCompletado();
 }
 
 function muereEstrella(platform,star){

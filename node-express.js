@@ -37,7 +37,19 @@ app.get('/comprobarUsuario/:id',function(request,response){
 		json={'nivel':usuario.nivel};
 	}
 	response.send(json);
-})
+});
+
+app.get('/nivelCompletado/:id',function(request,response){
+	var id=request.params.id;
+	var usuario=juego.obtenerUsuario(id);
+	usuario.nivel+=1;
+	console.log(usuario);
+	if (usuario!=undefined){		
+		json={'nivel':usuario.nivel};
+	}
+	response.send(json);
+});
+
 
 console.log("Servidor escuchando en el puerto "+port);
 app.listen(port,host);

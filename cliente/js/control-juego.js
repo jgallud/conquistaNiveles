@@ -20,6 +20,7 @@ function borrarControl(){
 
 function mostrarCabecera(){
 	$('#cabecera').remove();
+	$('#datos').remove();
 	$('#control').append('<p id="cabecera"><h2 id="cabeceraP">Panel de  Control</h2><input type="text" id="nombre" placeholder="introduce tu nombre"></p>');
 	botonNombre();
 }
@@ -42,7 +43,7 @@ function mostrarInfoJugador(){
 	$('#datos').remove();
 	$('#cabeceraP').remove();
 	$('#cabecera').remove();
-	$('#control').append('<p id="cabecera"><h2>Panel</h2></p>')
+	$('#control').append('<div id="cabecera"><h2>Panel</h2></div>')
 	$('#control').append('<div id="datos">Nombre: '+nombre+' Nivel: '+nivel+' Id:'+id+'</div>');
 	siguienteNivel();
 }
@@ -51,6 +52,7 @@ function siguienteNivel(){
 	$('#control').append('<button type="button" id="siguienteBtn" class="btn btn-primary btn-md">Siguiente nivel</button>')
 	$('#siguienteBtn').on('click',function(){
 		$('#siguienteBtn').remove();
+		$('#enh').remove();
 		crearNivel($.cookie('nivel'));
 	});
 }
@@ -59,8 +61,14 @@ function noHayNiveles(){
 	$('#control').append('<button type="button" id="siguienteBtn" class="btn btn-primary btn-md">Volver a empezar</button>')
 	$('#siguienteBtn').on('click',function(){
 		$('#siguienteBtn').remove();
-		//reset();
+			reset();
 	});
+}
+
+function nivelCompletado(){
+	game.destroy();
+	$('#juegoId').append("<h2 id='enh'>Enhorabuena!</h2>");
+	comunicarNivelCompletado();
 }
 
 function reset(){
@@ -102,4 +110,13 @@ function comprobarUsuario(){
 			mostrarInfoJugador();
 		}
 	});
+}
+
+function comunicarNivelCompletado(){
+var id=$.cookie("id");
+
+	$.getJSON(url+'nivelCompletado/'+id,function(datos){
+			$.cookie("nivel",datos.nivel);
+			mostrarInfoJugador();
+	});	
 }
