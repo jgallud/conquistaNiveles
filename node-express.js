@@ -13,7 +13,7 @@ var juego= new modelo.Juego();
 app.use(exp.static(__dirname +"/cliente"));
 
 app.get("/",function(request,response){
-	var contenido=fs.readFileSync("./cliente/index.html");
+	var contenido=fs.readFileSync("./cliente/index-nav.html");
 	response.setHeader("Content-type","text/html");
 	response.send(contenido);
 });

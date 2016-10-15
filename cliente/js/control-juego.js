@@ -20,6 +20,7 @@ function borrarControl(){
 
 function mostrarCabecera(){
 	$('#cabecera').remove();
+	$('#enh').remove();
 	$('#datos').remove();
 	$('#control').append('<p id="cabecera"><h2 id="cabeceraP">Panel de  Control</h2><input type="text" id="nombre" placeholder="introduce tu nombre"></p>');
 	botonNombre();
@@ -58,6 +59,7 @@ function siguienteNivel(){
 }
 
 function noHayNiveles(){
+	$('#juegoId').append("<h2 id='enh'>Lo siento, no tenemos más niveles</h2>");
 	$('#control').append('<button type="button" id="siguienteBtn" class="btn btn-primary btn-md">Volver a empezar</button>')
 	$('#siguienteBtn').on('click',function(){
 		$('#siguienteBtn').remove();

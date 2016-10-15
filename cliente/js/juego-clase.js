@@ -7,6 +7,9 @@ var cielo;
 var stars;
 var score = 0;
 var scoreText;
+var timer;
+var tiempo=0;
+var tiempoText;
 
 var maxNiveles=3;
 var ni;
@@ -120,6 +123,10 @@ function create() {
         //  The score
         scoreText = game.add.text(16, 22, 'Vidas: 5', { fontSize: '32px', fill: '#000' });
 
+        tiempoText=game.add.text(game.world.width-165,22,'Tiempo:0',{ fontSize: '32px', fill: '#000' });
+        tiempo=0;
+        timer=game.time.events.loop(Phaser.Timer.SECOND,updateTiempo,this);
+
         //  Our controls.
         cursors = game.input.keyboard.createCursorKeys();
         
@@ -172,6 +179,11 @@ function update() {
 
     }
 
+function updateTiempo(){
+    tiempo++;
+    tiempoText.setText('Tiempo: '+tiempo);
+}
+
 function collectStar (player, star) {       
         // Removes the star from the screen
         star.kill();
@@ -179,12 +191,17 @@ function collectStar (player, star) {
         //  Add and update the score
         player.vidas=player.vidas-1;
         scoreText.text = 'Vidas: ' + player.vidas;
+        if (player.vidas==0){
+            player.kill();
+            game.time.events.remove(timer);
+        }
 }
 
 function terminaNivel(player,final){
     // llamar a nivelCompletado y pasar tiempo y vidas
-    console.log("Nivel completado");
+    //console.log("Nivel completado");
     player.kill();
+    game.time.events.remove(timer);
     nivelCompletado();
 }
 
