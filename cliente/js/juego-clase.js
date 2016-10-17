@@ -202,7 +202,7 @@ function terminaNivel(player,final){
     //console.log("Nivel completado");
     player.kill();
     game.time.events.remove(timer);
-    nivelCompletado();
+    nivelCompletado(tiempo);
 }
 
 function muereEstrella(platform,star){

@@ -39,17 +39,28 @@ app.get('/comprobarUsuario/:id',function(request,response){
 	response.send(json);
 });
 
-app.get('/nivelCompletado/:id',function(request,response){
+app.get('/nivelCompletado/:id/:tiempo',function(request,response){
 	var id=request.params.id;
+	var tiempo=request.params.tiempo;
 	var usuario=juego.obtenerUsuario(id);
+	juego.agregarResultado(new modelo.Resultado(usuario.nombre,usuario.nivel,tiempo));
 	usuario.nivel+=1;
-	console.log(usuario);
+	console.log(juego.resultados);
 	if (usuario!=undefined){		
 		json={'nivel':usuario.nivel};
 	}
 	response.send(json);
 });
 
+app.get('/obtenerResultados/:id',function(request,response){
+	var id=request.params.id;
+	var usuario=juego.obtenerUsuario(id);
+	var json={'resultados':[]};
+	if (usuario){
+		json=juego.resultados;
+	}
+	response.send(json);
+})
 
 console.log("Servidor escuchando en el puerto "+port);
 app.listen(port,host);

@@ -54,6 +54,8 @@ function siguienteNivel(){
 	$('#siguienteBtn').on('click',function(){
 		$('#siguienteBtn').remove();
 		$('#enh').remove();
+		$('#res').remove();
+  		$('#resultados').remove();
 		crearNivel($.cookie('nivel'));
 	});
 }
@@ -67,10 +69,25 @@ function noHayNiveles(){
 	});
 }
 
-function nivelCompletado(){
+function nivelCompletado(tiempo){
 	game.destroy();
 	$('#juegoId').append("<h2 id='enh'>Enhorabuena!</h2>");
-	comunicarNivelCompletado();
+	comunicarNivelCompletado(tiempo);
+	obtenerResultados();
+}
+
+function mostrarResultados(datos){
+  //eliminarGame();
+  //eliminarCabeceras();
+  $('#res').remove();
+  $('#resultados').remove();
+  $('#juegoId').append('<h3 id="res">Resultados</h3>');
+  var cadena="<table id='resultados' class='table table-bordered table-condensed'><tr><th>Nombre</th><th>Nivel</th><th>Tiempo</th></tr>";
+    for(var i=0;i<datos.length;i++){
+      cadena=cadena+"<tr><td>"+datos[i].nombre+"</td><td> "+datos[i].nivel+"</td>"+"</td><td> "+datos[i].tiempo+"</td></tr>";      
+    }
+    cadena=cadena+"</table>";
+    $('#juegoId').append(cadena);
 }
 
 function reset(){
@@ -114,11 +131,20 @@ function comprobarUsuario(){
 	});
 }
 
-function comunicarNivelCompletado(){
-var id=$.cookie("id");
+function comunicarNivelCompletado(tiempo){
+	var id=$.cookie("id");
 
-	$.getJSON(url+'nivelCompletado/'+id,function(datos){
+	$.getJSON(url+'nivelCompletado/'+id+"/"+tiempo,function(datos){
 			$.cookie("nivel",datos.nivel);
 			mostrarInfoJugador();
 	});	
+}
+
+function obtenerResultados(){
+	var id=$.cookie("id");
+
+	$.getJSON(url+'obtenerResultados/'+id,function(datos){
+			//$.cookie("nivel",datos.nivel);
+			mostrarResultados(datos);
+	});
 }
