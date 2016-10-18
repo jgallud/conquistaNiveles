@@ -22,6 +22,7 @@ function mostrarCabecera(){
 	$('#cabecera').remove();
 	$('#enh').remove();
 	$('#datos').remove();
+	$('#prog').remove();
 	$('#control').append('<p id="cabecera"><h2 id="cabeceraP">Panel de  Control</h2><input type="text" id="nombre" placeholder="introduce tu nombre"></p>');
 	botonNombre();
 }
@@ -41,11 +42,14 @@ function mostrarInfoJugador(){
 	var nombre=$.cookie("nombre");
 	var id=$.cookie("id");
 	var nivel=$.cookie("nivel");
+	var percen=(nivel/3)*100;
 	$('#datos').remove();
 	$('#cabeceraP').remove();
 	$('#cabecera').remove();
+	$('#prog').remove();
 	$('#control').append('<div id="cabecera"><h2>Panel</h2></div>')
 	$('#control').append('<div id="datos">Nombre: '+nombre+' Nivel: '+nivel+' Id:'+id+'</div>');
+	$('#control').append('<div class="progress" id="prog"><div class="progress-bar" aria-valuemin="0" aria-valuemax="100" style="width:'+percen+'%">');
 	siguienteNivel();
 }
 
@@ -65,7 +69,7 @@ function noHayNiveles(){
 	$('#control').append('<button type="button" id="siguienteBtn" class="btn btn-primary btn-md">Volver a empezar</button>')
 	$('#siguienteBtn').on('click',function(){
 		$('#siguienteBtn').remove();
-			reset();
+		reset();
 	});
 }
 
