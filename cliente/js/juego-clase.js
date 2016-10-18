@@ -113,7 +113,7 @@ function create() {
             var star = stars.create(i * 70, 0, 'star');
 
             //  Let gravity do its thing
-            star.body.gravity.y = 300;
+            star.body.gravity.y = 50;
 
             //  This just gives each star a slightly random bounce value
             //star.body.bounce.y = 0.7 + Math.random() * 0.2;
@@ -123,7 +123,7 @@ function create() {
         //  The score
         scoreText = game.add.text(16, 22, 'Vidas: 5', { fontSize: '32px', fill: '#000' });
 
-        tiempoText=game.add.text(game.world.width-165,22,'Tiempo:0',{ fontSize: '32px', fill: '#000' });
+        tiempoText=game.add.text(game.world.width-170,22,'Tiempo:0',{ fontSize: '32px', fill: '#000' });
         tiempo=0;
         timer=game.time.events.loop(Phaser.Timer.SECOND,updateTiempo,this);
 

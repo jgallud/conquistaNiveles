@@ -70,7 +70,8 @@ function noHayNiveles(){
 }
 
 function nivelCompletado(tiempo){
-	game.destroy();
+	//game.destroy();
+	game.sate.shutdown();
 	$('#juegoId').append("<h2 id='enh'>Enhorabuena!</h2>");
 	comunicarNivelCompletado(tiempo);
 	obtenerResultados();
