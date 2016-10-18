@@ -180,7 +180,7 @@ function update() {
 }
 
 function lanzarMeteorito(){
-    var x=Math.floor(Math.random()*800+1);
+    var x=Math.floor(Math.random()*765+1);
     var meteorito = meteoritos.create(x, 0, 'meteorito');
     meteorito.body.gravity.y = 50;
 }
