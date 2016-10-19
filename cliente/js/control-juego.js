@@ -42,14 +42,14 @@ function mostrarInfoJugador(){
 	var nombre=$.cookie("nombre");
 	var id=$.cookie("id");
 	var nivel=$.cookie("nivel");
-	var percen=(nivel/3)*100;
+	var percen=Math.floor((nivel/3)*100);
 	$('#datos').remove();
 	$('#cabeceraP').remove();
 	$('#cabecera').remove();
 	$('#prog').remove();
 	$('#control').append('<div id="cabecera"><h2>Panel</h2></div>')
-	$('#control').append('<div id="datos">Nombre: '+nombre+' Nivel: '+nivel+' Id:'+id+'</div>');
-	$('#control').append('<div class="progress" id="prog"><div class="progress-bar" aria-valuemin="0" aria-valuemax="100" style="width:'+percen+'%">');
+	$('#control').append('<div id="datos"><h4>Nombre: '+nombre+'<br />Nivel: '+nivel+'</h4></div>');
+	$('#control').append('<div class="progress" id="prog"><div class="progress-bar" aria-valuemin="0" aria-valuemax="100" style="width:'+percen+'%">'+percen+'%</div></div>');
 	siguienteNivel();
 }
 
