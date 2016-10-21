@@ -1,13 +1,17 @@
 
 var fs=require("fs");
-var config=JSON.parse(fs.readFileSync("config.json"));
-var host=config.host;
-var port=config.port;
+//var config=JSON.parse(fs.readFileSync("config.json"));
+//var host=config.host;
+//var port=config.port;
 var exp=require("express");
 var app=exp(); 
+var mongo=require("mongodb"); 
 var modelo=require('./servidor/modelo.js');
 
 var juego= new modelo.Juego();
+var usuariosCol;
+
+app.set('port', (process.env.PORT || 5000));
 
 //app.use(app.router);
 app.use(exp.static(__dirname +"/cliente"));
@@ -15,6 +19,7 @@ app.use(exp.static(__dirname +"/cliente"));
 app.get("/",function(request,response){
 	var contenido=fs.readFileSync("./cliente/index-nav.html");
 	response.setHeader("Content-type","text/html");
+	insertar({nombre:"Pepe",email:"pe@pe.es"});
 	response.send(contenido);
 });
 
@@ -62,6 +67,34 @@ app.get('/obtenerResultados/:id',function(request,response){
 	response.send(json);
 })
 
-console.log("Servidor escuchando en el puerto "+port);
-app.listen(port,host);
+//console.log("Servidor escuchando en el puerto "+port);
+//app.listen(port);
 
+function insertar(usu){
+	usuariosCol.insert(usu,function(err){
+		if(err){
+			console.log("error");
+		}
+		else{
+			console.log("Nuevo usuario creado");
+			//juego.agregarUsuario(usu);
+			//response.send(usu);
+		}
+	});
+
+}
+
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
+
+var db= new mongo.Db("usuarioscn",new mongo.Server("127.0.0.1","27017",{}));
+
+db.open(function(error){
+	console.log("conectado a Mongo: usuarioscn");
+	db.collection("usuarios",function(err,col){
+		console.log("tenemos la colección");
+		usuariosCol=col;
+	})
+})

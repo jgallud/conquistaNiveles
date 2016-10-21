@@ -1,5 +1,6 @@
 
-var url="http://127.0.0.1:1338/";
+//var url="https://conquerlevels.herokuapp.com/";
+var url="http://127.0.0.1:5000/";
 var game;
 
 //Funciones que modifican el index
