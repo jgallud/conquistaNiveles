@@ -92,9 +92,14 @@ app.listen(app.get('port'), function() {
 var db= new mongo.Db("usuarioscn",new mongo.Server("127.0.0.1","27017",{}));
 
 db.open(function(error){
-	console.log("conectado a Mongo: usuarioscn");
-	db.collection("usuarios",function(err,col){
-		console.log("tenemos la colección");
-		usuariosCol=col;
-	})
+	if (error){
+		console.log("No se pudo conectar con Mongo")
+	}
+	else{
+		console.log("conectado a Mongo: usuarioscn");
+		db.collection("usuarios",function(err,col){
+			console.log("tenemos la colección");
+			usuariosCol=col;
+		});
+	}
 })
