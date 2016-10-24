@@ -5,7 +5,7 @@ var fs=require("fs");
 //var port=config.port;
 var exp=require("express");
 var app=exp(); 
-var mongo=require("mongodb"); 
+var mongo=require("mongodb").MongoClient; 
 var modelo=require('./servidor/modelo.js');
 
 var juego= new modelo.Juego();
@@ -89,11 +89,11 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-var db= new mongo.Db("usuarioscn",new mongo.Server("127.0.0.1","27017",{}));
+//var db= new mongo.Db("usuarioscn",new mongo.Server("127.0.0.1","27017",{}));
 
-db.open(function(error){
-	if (error){
-		console.log("No se pudo conectar con Mongo")
+mongo.connect("mongodb://127.0.0.1:27017/usuarioscn", function(err, db) {
+	if (err){
+		console.log("No pudo conectar a la base de datos")
 	}
 	else{
 		console.log("conectado a Mongo: usuarioscn");
@@ -102,4 +102,4 @@ db.open(function(error){
 			usuariosCol=col;
 		});
 	}
-})
+});
