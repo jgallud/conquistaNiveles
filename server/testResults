@@ -1,0 +1,15 @@
+...F..
+
+Failures:
+
+  1) El juego Conquista Niveles... comprobar obtenerUsuario (usuario existente)
+   Message:
+     TypeError: Cannot read property 'key' of undefined
+   Stacktrace:
+     TypeError: Cannot read property 'key' of undefined
+    at null.<anonymous> (C:\dev\heroku\proyectobase\server\modelo_spec.js:35:13)
+
+Finished in 0.015 seconds
+6 tests, 12 assertions, 1 failure, 0 skipped
+
+

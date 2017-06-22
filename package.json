@@ -1,0 +1,20 @@
+{
+  "name": "proyectobase",
+  "version": "1.0.0",
+  "description": "Conquista niveles",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "^3.4.2",
+    "mongodb": "*",
+    "sendgrid": "^1.9.2",
+    "socket.io": "^1.5.1",
+    "underscore": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

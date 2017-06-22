@@ -1,0 +1,101 @@
+2017-03-21T19:21:03.328834+00:00 app[web.1]: tenemos la colección resultados
+2017-03-21T19:21:03.329020+00:00 app[web.1]: tenemos la colección limbo
+2017-03-21T19:21:04.698030+00:00 heroku[router]: at=info method=GET path="/robots.txt" host=proyectobase.herokuapp.com request_id=2e575541-775a-48b2-abfd-759981d77c71 fwd="66.249.76.63" dyno=web.1 connect=0ms service=22ms status=404 bytes=221 protocol=http
+2017-03-21T19:21:24.724446+00:00 heroku[router]: at=info method=GET path="/" host=proyectobase.herokuapp.com request_id=5cbff328-8283-4d0c-809d-f2a5e009348f fwd="66.249.76.62" dyno=web.1 connect=0ms service=14ms status=200 bytes=2845 protocol=http
+2017-03-21T19:56:37.798683+00:00 heroku[web.1]: Idling
+2017-03-21T19:56:37.799390+00:00 heroku[web.1]: State changed from up to down
+2017-03-21T19:56:38.675181+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-03-21T19:56:38.802835+00:00 heroku[web.1]: Process exited with status 143
+2017-03-22T06:10:12.597655+00:00 heroku[web.1]: Unidling
+2017-03-22T06:10:12.597981+00:00 heroku[web.1]: State changed from down to starting
+2017-03-22T06:10:14.599032+00:00 heroku[web.1]: Starting process with command `node index.js`
+2017-03-22T06:10:16.746101+00:00 heroku[web.1]: State changed from starting to up
+2017-03-22T06:10:16.748735+00:00 app[web.1]: Node app se está ejecutando en puerto 21664
+2017-03-22T06:10:17.488149+00:00 app[web.1]: conectado a Mongo: usuarioscn
+2017-03-22T06:10:17.489057+00:00 app[web.1]: tenemos la colección usuarios
+2017-03-22T06:10:17.489363+00:00 app[web.1]: tenemos la colección resultados
+2017-03-22T06:10:17.489487+00:00 app[web.1]: tenemos la colección limbo
+2017-03-22T06:10:17.952826+00:00 heroku[router]: at=info method=GET path="/" host=proyectobase.herokuapp.com request_id=d99502f0-b711-48d6-8315-855befce9b2f fwd="66.249.66.76" dyno=web.1 connect=0ms service=16ms status=200 bytes=2845 protocol=http
+2017-03-22T06:45:26.331613+00:00 heroku[web.1]: Idling
+2017-03-22T06:45:26.332087+00:00 heroku[web.1]: State changed from up to down
+2017-03-22T06:45:26.874614+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-03-22T06:45:26.969669+00:00 heroku[web.1]: Process exited with status 143
+2017-03-22T07:47:36.073300+00:00 heroku[web.1]: Unidling
+2017-03-22T07:47:36.073652+00:00 heroku[web.1]: State changed from down to starting
+2017-03-22T07:47:38.032308+00:00 heroku[web.1]: Starting process with command `node index.js`
+2017-03-22T07:47:40.848838+00:00 app[web.1]: Node app se está ejecutando en puerto 4552
+2017-03-22T07:47:41.931394+00:00 heroku[web.1]: State changed from starting to up
+2017-03-22T07:47:41.649718+00:00 app[web.1]: conectado a Mongo: usuarioscn
+2017-03-22T07:47:41.651186+00:00 app[web.1]: tenemos la colección usuarios
+2017-03-22T07:47:41.651659+00:00 app[web.1]: tenemos la colección resultados
+2017-03-22T07:47:41.651841+00:00 app[web.1]: tenemos la colección limbo
+2017-03-22T07:47:43.453668+00:00 heroku[router]: at=info method=GET path="/robots.txt" host=proyectobase.herokuapp.com request_id=6d90104b-e391-4b07-89ee-102c9d99d297 fwd="66.249.66.124" dyno=web.1 connect=0ms service=23ms status=404 bytes=221 protocol=http
+2017-03-22T07:47:43.667388+00:00 heroku[router]: at=info method=GET path="/" host=proyectobase.herokuapp.com request_id=cdf15b2e-fc28-4d7e-8e21-a5486b5f6f97 fwd="66.249.66.126" dyno=web.1 connect=0ms service=18ms status=200 bytes=2845 protocol=http
+2017-03-22T08:20:14.096433+00:00 heroku[web.1]: Idling
+2017-03-22T08:20:14.097167+00:00 heroku[web.1]: State changed from up to down
+2017-03-22T08:20:14.968331+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-03-22T08:20:15.124877+00:00 heroku[web.1]: Process exited with status 143
+2017-03-22T14:21:14.119609+00:00 heroku[web.1]: Unidling
+2017-03-22T14:21:14.119856+00:00 heroku[web.1]: State changed from down to starting
+2017-03-22T14:21:16.192160+00:00 heroku[web.1]: Starting process with command `node index.js`
+2017-03-22T14:21:19.034902+00:00 app[web.1]: Node app se está ejecutando en puerto 50041
+2017-03-22T14:21:19.807211+00:00 heroku[web.1]: State changed from starting to up
+2017-03-22T14:21:19.925797+00:00 app[web.1]: conectado a Mongo: usuarioscn
+2017-03-22T14:21:19.927183+00:00 app[web.1]: tenemos la colección usuarios
+2017-03-22T14:21:19.927713+00:00 app[web.1]: tenemos la colección resultados
+2017-03-22T14:21:19.927882+00:00 app[web.1]: tenemos la colección limbo
+2017-03-22T14:21:21.504576+00:00 heroku[router]: at=info method=GET path="/robots.txt" host=proyectobase.herokuapp.com request_id=feb9937f-200d-4f99-aadf-97b338e55ab3 fwd="66.249.76.60" dyno=web.1 connect=0ms service=16ms status=404 bytes=221 protocol=https
+2017-03-22T14:21:21.682948+00:00 heroku[router]: at=info method=GET path="/socket.io/?EIO=3&transport=polling&t=1487808000000-2&sid=M3QIncNgX0bEZoiGAAAA" host=proyectobase.herokuapp.com request_id=e0820d00-b1d0-4328-9043-b9d49b0cc720 fwd="66.249.76.61" dyno=web.1 connect=0ms service=10ms status=400 bytes=300 protocol=https
+2017-03-22T14:21:22.933345+00:00 heroku[router]: at=info method=GET path="/socket.io/?EIO=3&transport=polling&t=1490140800040-2&sid=M3QIncNgX0bEZoiGAAAA" host=proyectobase.herokuapp.com request_id=f8a0d5fa-ece7-43b9-8b5d-be7a159de9d6 fwd="66.249.76.60" dyno=web.1 connect=0ms service=2ms status=400 bytes=300 protocol=https
+2017-03-22T14:21:24.081511+00:00 heroku[router]: at=info method=OPTIONS path="/socket.io/?EIO=3&transport=polling&t=1490140800070-3&sid=M3QIncNgX0bEZoiGAAAA" host=proyectobase.herokuapp.com request_id=af6793c3-47fa-4c54-b3f4-b04007d58759 fwd="66.249.76.61" dyno=web.1 connect=0ms service=16ms status=400 bytes=300 protocol=https
+2017-03-22T14:55:55.298592+00:00 heroku[web.1]: Idling
+2017-03-22T14:55:55.299048+00:00 heroku[web.1]: State changed from up to down
+2017-03-22T14:55:55.823088+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-03-22T14:55:55.923017+00:00 heroku[web.1]: Process exited with status 143
+2017-03-22T18:29:35.000000+00:00 app[api]: Build started by user jgallud@gmail.com
+2017-03-22T18:29:54.556512+00:00 app[api]: Deploy b0aeb16 by user jgallud@gmail.com
+2017-03-22T18:29:54.556512+00:00 app[api]: Release v132 created by user jgallud@gmail.com
+2017-03-22T18:29:54.826161+00:00 app[api]: Release v132 created by user jgallud@gmail.com
+2017-03-22T18:29:35.000000+00:00 app[api]: Build succeeded
+2017-03-22T18:29:55.147931+00:00 heroku[web.1]: State changed from down to starting
+2017-03-22T18:29:57.528877+00:00 heroku[web.1]: Starting process with command `node index.js`
+2017-03-22T18:30:00.423861+00:00 heroku[web.1]: State changed from starting to crashed
+2017-03-22T18:30:00.424904+00:00 heroku[web.1]: State changed from crashed to starting
+2017-03-22T18:30:00.410942+00:00 heroku[web.1]: Process exited with status 1
+2017-03-22T18:30:00.312409+00:00 app[web.1]: module.js:471
+2017-03-22T18:30:00.312431+00:00 app[web.1]:     throw err;
+2017-03-22T18:30:00.312432+00:00 app[web.1]:     ^
+2017-03-22T18:30:00.312433+00:00 app[web.1]: 
+2017-03-22T18:30:00.312434+00:00 app[web.1]: Error: Cannot find module 'nodemailer'
+2017-03-22T18:30:00.312436+00:00 app[web.1]:     at Function.Module._resolveFilename (module.js:469:15)
+2017-03-22T18:30:00.312436+00:00 app[web.1]:     at Function.Module._load (module.js:417:25)
+2017-03-22T18:30:00.312437+00:00 app[web.1]:     at Module.require (module.js:497:17)
+2017-03-22T18:30:00.312437+00:00 app[web.1]:     at require (internal/module.js:20:19)
+2017-03-22T18:30:00.312438+00:00 app[web.1]:     at Object.<anonymous> (/app/server/email.js:3:18)
+2017-03-22T18:30:00.312438+00:00 app[web.1]:     at Module._compile (module.js:570:32)
+2017-03-22T18:30:00.312439+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:579:10)
+2017-03-22T18:30:00.312439+00:00 app[web.1]:     at Module.load (module.js:487:32)
+2017-03-22T18:30:00.312440+00:00 app[web.1]:     at tryModuleLoad (module.js:446:12)
+2017-03-22T18:30:00.312441+00:00 app[web.1]:     at Function.Module._load (module.js:438:3)
+2017-03-22T18:30:02.517658+00:00 heroku[web.1]: Starting process with command `node index.js`
+2017-03-22T18:30:04.438214+00:00 heroku[web.1]: State changed from starting to crashed
+2017-03-22T18:30:04.358714+00:00 app[web.1]:     throw err;
+2017-03-22T18:30:04.358698+00:00 app[web.1]: module.js:471
+2017-03-22T18:30:04.358715+00:00 app[web.1]:     ^
+2017-03-22T18:30:04.358716+00:00 app[web.1]: 
+2017-03-22T18:30:04.358717+00:00 app[web.1]: Error: Cannot find module 'nodemailer'
+2017-03-22T18:30:04.358721+00:00 app[web.1]:     at Function.Module._resolveFilename (module.js:469:15)
+2017-03-22T18:30:04.358721+00:00 app[web.1]:     at Function.Module._load (module.js:417:25)
+2017-03-22T18:30:04.358722+00:00 app[web.1]:     at Module.require (module.js:497:17)
+2017-03-22T18:30:04.358722+00:00 app[web.1]:     at require (internal/module.js:20:19)
+2017-03-22T18:30:04.358723+00:00 app[web.1]:     at Object.<anonymous> (/app/server/email.js:3:18)
+2017-03-22T18:30:04.358724+00:00 app[web.1]:     at Module._compile (module.js:570:32)
+2017-03-22T18:30:04.358724+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:579:10)
+2017-03-22T18:30:04.358725+00:00 app[web.1]:     at Module.load (module.js:487:32)
+2017-03-22T18:30:04.358725+00:00 app[web.1]:     at tryModuleLoad (module.js:446:12)
+2017-03-22T18:30:04.358726+00:00 app[web.1]:     at Function.Module._load (module.js:438:3)
+2017-03-22T18:30:04.425588+00:00 heroku[web.1]: Process exited with status 1
+2017-03-22T18:30:05.703739+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=proyectobase.herokuapp.com request_id=996c15ef-cf86-4b83-aaa5-6f53d469274c fwd="161.67.8.34" dyno= connect= service= status=503 bytes= protocol=https
+2017-03-22T18:30:05.765944+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=proyectobase.herokuapp.com request_id=a207d6f0-7c70-43bc-af9c-b5fe089dc00b fwd="161.67.8.34" dyno= connect= service= status=503 bytes= protocol=https
+2017-03-22T18:30:10.600069+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=proyectobase.herokuapp.com request_id=784be5be-d443-4784-a7c9-8b8972029fc2 fwd="161.67.8.34" dyno= connect= service= status=503 bytes= protocol=https
+2017-03-22T18:30:10.816524+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=proyectobase.herokuapp.com request_id=f6cc5a36-5be2-4672-8b92-7d17fe9c7572 fwd="161.67.8.34" dyno= connect= service= status=503 bytes= protocol=https

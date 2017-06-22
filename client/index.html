@@ -1,0 +1,63 @@
+<html>
+<html lang="en">
+<head>
+  <title>Conquista Niveles</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">-->
+  <!--<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>-->
+  <script src="lib/jquery.cookie.js"></script>
+  <script src="lib/underscore-min.js"></script>
+  <script type="text/javascript" src="js/phaser.min.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  <script type="text/javascript" src="lib/pagination.js"></script>
+  <script type="text/javascript" src="js/helper.js"></script>
+  <script type="text/javascript" src="js/control.js"></script>
+  <script type="text/javascript" src="js/juego2.js"></script>
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon.ico">
+</head>
+<body>  
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" id="ini1" onclick="comprobarUsuario();">Conquista Niveles</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#" id="ini2" onclick="comprobarUsuario();">Inicio</a></li>
+      <li><a href="#" id="resul" onclick="obtenerResultados();">Resultados</a></li>
+      <!--<li><a href="#" onclick="mostrarActualizarEliminar();">Modificar perfil</a></li>
+      <li><a href="#" onclick="reset();">Salir</a></li>-->
+    </ul>
+    <ul class="nav navbar-nav navbar-right" id="inicio">
+    </ul>
+  </div>
+</nav>
+  <div class="container-fluid bg-1 text-center" id="intro">
+  </div>
+  <div class="container-fluid text-center" id="home">
+  </div> 
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div id="control"></div>
+      </div>
+      <div class="col-sm-8" id="canvas">
+       <div id="juegoId"></div>
+       <!--<div id="resultados"></div>-->
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      comprobarUsuario();
+  </script>
+  <!--
+  <footer class="container-fluid bg-4 text-center">
+    <p>Dude sprite from: <a href="http://www.benmuellerdesigns.com/index.html">Ben Muller</a></p>
+  </footer>
+  -->
+</body>
+</html>
+
