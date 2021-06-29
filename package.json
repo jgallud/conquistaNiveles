@@ -9,7 +9,7 @@
     "mongodb": "*",
     "sendgrid": "^1.9.2",
     "socket.io": ">=2.4.0",
-    "underscore": "*"
+    "underscore": ">1.12.1"
   },
   "devDependencies": {},
   "scripts": {
