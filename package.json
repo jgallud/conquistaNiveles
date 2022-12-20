@@ -4,9 +4,9 @@
   "description": "Conquista niveles",
   "main": "index.js",
   "dependencies": {
-    "body-parser": "*",
+    "body-parser": "^1.20.1",
     "express": "^4.17.2",
-    "mongodb": "*",
+    "mongodb": "^4.13.0",
     "sendgrid": "^1.9.2",
     "socket.io": ">=2.4.0",
     "underscore": ">1.12.1"
