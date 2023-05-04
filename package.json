@@ -8,7 +8,7 @@
     "express": "^4.17.2",
     "mongodb": "^4.13.0",
     "sendgrid": "^1.9.2",
-    "socket.io": ">=2.4.0",
+    "socket.io": ">=4.6.1",
     "underscore": ">1.12.1"
   },
   "devDependencies": {},
